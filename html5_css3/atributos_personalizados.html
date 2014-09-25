@@ -3,14 +3,29 @@
 <head>
 	<meta charset="utf-8">
 	<title>Atributos Personalizados HTML5</title>
+	<style>
+		li[data-matricula='001'] { 
+			color: yellow; 
+			background-color:green; 
+		} 
+	</style>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 	<script>
 		function chamaJavaScript(componente){ 
 			var matricula = componente.getAttribute("data-matricula"); 
+			var matricula2 = componente.dataset.matricula; //outro jeito de recuperar os dados com o dataset API
 			var idade = componente.getAttribute("data-idade"); 
 			var sexo = componente.getAttribute("data-sexo"); // Faça aqui o que desejar com os valores obtidos 
 
-			alert(idade);
+			alert(matricula);
 		}
+
+		//com jQuery
+		$(document).ready(function() {
+			$("li").click(function() { 
+				alert($(this).data("idade"));
+			});
+		});
 
 	</script>
 </head>

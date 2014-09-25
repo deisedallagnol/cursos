@@ -1,0 +1,22 @@
+/*
+Descrição: Curso de HTML5 e CSS3
+Autor: Deise Dall'Agnol
+Conteúdo: Media Queries CSS3
+*/
+
+@media only screen 
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+
+/*
+
+Além de verificar a largura do dispositivo,
+
+você pode conferir a orientação, utilizando
+
+"landscape" ou "portrait".
+
+*/
+
+}
