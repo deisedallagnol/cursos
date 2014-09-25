@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Atributos Personalizados HTML5</title>
+	<script>
+		function chamaJavaScript(componente){ 
+			var matricula = componente.getAttribute("data-matricula"); 
+			var idade = componente.getAttribute("data-idade"); 
+			var sexo = componente.getAttribute("data-sexo"); // Faça aqui o que desejar com os valores obtidos 
+
+			alert(idade);
+		}
+
+	</script>
+</head>
+<body>
+<h1>Utilizando os Custom Data Attributes da HTML5</h1>
+
+<ul> 
+	<li data-matricula="001" data-idade="23" data-sexo="M" onclick="chamaJavaScript(this);">Pedro</li> 
+	<li data-matricula="002" data-idade="28" data-sexo="M" onclick="chamaJavaScript(this);">João</li> 
+	<li data-matricula="003" data-idade="33" data-sexo="F" onclick="chamaJavaScript(this);">Kamila</li> 
+</ul>	
+</body>
+</html>

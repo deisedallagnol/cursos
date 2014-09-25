@@ -3,3 +3,31 @@ Descrição: Curso de HTML5 e CSS3
 Autor: Deise Dall'Agnol
 Conteúdo: Seletores CSS3
 */
+
+/*Placeholder*/
+input,
+textarea {
+    padding: 10px;
+    display: block;
+    width: 70%;
+}
+
+::-webkit-input-placeholder {
+   color: orange;
+   font: 12px verdana, arial, sans-serif;
+}
+
+:-moz-placeholder {
+   color: orange;
+   font: 12px verdana, arial, sans-serif;
+}
+
+::-moz-placeholder {
+   color: orange;  
+   font: 12px verdana, arial, sans-serif;
+}
+
+:-ms-input-placeholder {  
+   color: orange;  
+   font: 12px verdana, arial, sans-serif;
+}
