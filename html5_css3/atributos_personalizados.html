@@ -17,13 +17,13 @@
 			var idade = componente.getAttribute("data-idade"); 
 			var sexo = componente.getAttribute("data-sexo"); // Faça aqui o que desejar com os valores obtidos 
 
-			alert(matricula);
+			alert('Matricula '+matricula);
 		}
 
 		//com jQuery
 		$(document).ready(function() {
 			$("li").click(function() { 
-				alert($(this).data("idade"));
+				alert($(this).data("idade")+' anos');
 			});
 		});
 
