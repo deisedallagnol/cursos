@@ -3,14 +3,58 @@
 <head>
 	<meta charset="utf-8">
 	<title>Formulários HTML5</title>
-	<link rel="stylesheet" type="text/css" href="css/seletores.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/seletores.css">-->
 </head>
 <body>
+<h1>Formulários HTML5</h1>
+<p>Novos campos e atributos de validação como o required, placeholder e o pattern</p>
+<p>As validações dos formulários client-side em HTML4 eram feitas via Javascript, 
+no HTML5 não é necessário nenhum código Javascript para a validação client-side</p>
 <input name="valuex" type="range" value="12.4" step="0.2" min="0" max="20">
+<form>
+  <h2>Email</h2>
+  <input type="email" value="" placeholder="nome@email.com" required autofocus/>
+  <!-- o required escrito no padrão XHTML -->
+  <input type="email" name="email" required="required" />
+  
+  <h2>Números</h2>
+  <input type="number" required="required" name="numbers" pattern="[0-9]+$" />
+  
+  
+  <h2>Telefone</h2>
+  <label for="phone">Phone Number:</label>
+<input name="phone" type="tel" pattern="\((10)|([1-9][1-9])\) [2-9][0-9]{3}-[0-9]{4}" > 
+
+<h2>Validação de caracteres alfanuméricos</h2>
+  <label for="alpha">Alfanuméricos (não permite caracteres epeciais)</label><br/>
+
+  <input name="alpha" type="text" pattern="[a-zA-Z0-9]+" title="escreva apenas letras e números" required spellcheck="true">
+  <span>O que estiver dentro do title será usado como dica ao usuário</span>
+  
+    <h2>Validação cores hexadecimais</h2>
+  <label for="hex">Código da cor</label> <br/>
+  <input id="hex" type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" />
 
 
 <h2>Placeholders</h2>
-<input id="test" placeholder="Nome, email, etc"><br>
+<input id="test" placeholder="Nome, email, etc" required><br>
 <textarea placeholder="Uma mensagem..."></textarea>
+
+<p contenteditable="true" spellcheck="true">This is a praggagraph. It is editable. Try to change the text.</p>
+
+
+
+<input type="text" name="browser" list="browsers" />
+ 
+<datalist id="browsers">
+  <option value="Chrome" />
+  <option value="Firefox" />
+  <option value="Internet Explorer" />
+  <option value="Safari" />
+  <option value="Opera" />
+</datalist>
+
+<input type="submit" value="Enviar" />
+</form>
 </body>
 </html>
