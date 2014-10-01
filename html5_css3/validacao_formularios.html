@@ -10,8 +10,41 @@
 <p>Novos campos e atributos de validação como o required, placeholder e o pattern</p>
 <p>As validações dos formulários client-side em HTML4 eram feitas via Javascript, 
 no HTML5 não é necessário nenhum código Javascript para a validação client-side</p>
+
+<p>O HTML5 tem vários novos atributos para &lt;form&gt; e &lt;input&gt;.</p>
+<p>Novos atributos &lt;form&gt;:</p>
+<ul>
+	<li>autocomplete</li>
+	<li>novalidate</li>
+</ul>
+<p>Novos atributos para &lt;input&gt;:</p>
+<ul>
+	<li>autocomplete</li>
+	<li>autofocus</li>
+	<li>form</li>
+	<li>formaction</li>
+	<li>formenctype</li>
+	<li>formmethod</li>
+	<li>formnovalidate</li>
+	<li>formtarget</li>
+	<li>height and width</li>
+	<li>list</li>
+	<li>min and max</li>
+	<li>multiple</li>
+	<li>pattern (regexp)</li>
+	<li>placeholder</li>
+	<li>required</li>
+	<li>step</li>
+</ul>
+
+
+
+
 <input name="valuex" type="range" value="12.4" step="0.2" min="0" max="20">
-<form>
+<form id="frm" action="salva.php" method="get">
+<!-- Sem validar <form id="frm" action="salva.php" method="get" novalidate>-->
+<!-- Ativa autocomplete <form id="frm" action="salva.php" method="get" autocomplete="on">-->
+<!-- Não valida o email mesmo que o form esteja com o autocomplete="on" <input type="email" name="eml" autocomplete="off">-->
   <h2>Email</h2>
   <input type="email" value="" placeholder="nome@email.com" required autofocus/>
   <!-- o required escrito no padrão XHTML -->
@@ -42,7 +75,15 @@ no HTML5 não é necessário nenhum código Javascript para a validação client
 
 <p contenteditable="true" spellcheck="true">This is a praggagraph. It is editable. Try to change the text.</p>
 
+<h2>Aniversário</h2>
+<input type="date" name="aniver" min="1999-12-31" max="2004-09-30">
 
+
+<h2>Numero máximo</h2>
+<input type="number" name="numerom" min="1" max="10" step="2">
+
+
+ 
 
 <input type="text" name="browser" list="browsers" />
  
@@ -55,6 +96,14 @@ no HTML5 não é necessário nenhum código Javascript para a validação client
 </datalist>
 
 <input type="submit" value="Enviar" />
+
+
+<h2>Leva para outro action diferente do action do form atual<h2>
+<input type="submit" formmethod="post" formaction="outro.php" value="Enviar para outro arquivo de processamento">
+<input type="submit" formenctype="multipart/form-data" value="Enviar com formato de dados">
+<input type="submit" formnovalidate value="Enviar sem validar">
 </form>
+<h2>Campo fora do form</h2>
+<input type="text" name="fora" form="frm">
 </body>
 </html>
