@@ -1,0 +1,37 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+.fonte-personalizada{
+	font-family: 'Lobster', cursive; /*há fontes sem serifa, com serifa, e cursivas*/
+}
+
+.transparencia{
+	background-color:rgb(255,255,0,0.4);
+}
+
+.sombras{
+    text-shadow: 5px 5px 5px rbga(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+
+.colunas{
+/* Define a quantidade de colunas, a largura é definida uniformemente. */
+-moz-column-count: 2;
+-webkit-column-count: 2;
+/* Define qual a largura mínima para as colunas. Se as colunas forem espremidas, fazendo com que a largura delas fique menor que este valor, elas se transformam em 1 coluna automaticamente */
+-moz-column-width: 400px;
+-webkit-column-width: 400px;
+/* Define o espaço entre as colunas. */
+-moz-column-gap: 50px;
+-webkit-column-gap: 50px;
+}
+
+.fontes{
+    white-space: nowrap; /*obrigatótio para funcionar o text-overflow, nowrap não quebra a frase*/
+	/*word-wrap: break-word;*/ /*quebra a palavra*/
+    overflow: hidden; /*obrigatótio para funcionar o text-overflow*/
+    text-overflow: ellipsis; /*coloca 3 pontinhos ou o clip que esconde o resto da palavra*/
+    width: 200px;
+    height: 20px;
+    border: 1px solid #000;
+}
