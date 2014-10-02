@@ -31,3 +31,20 @@ textarea {
    color: orange;  
    font: 12px verdana, arial, sans-serif;
 }
+
+/*Pseudo-elementos*/
+.box::before{
+
+}
+
+.box::after{
+
+}
+
+/*Conteúdo estático no CSS*/
+.elemento::before {
+display: block;
+margin: 0 0 35px 2px;
+color: #1D8CBA;
+content: 'sss';
+}

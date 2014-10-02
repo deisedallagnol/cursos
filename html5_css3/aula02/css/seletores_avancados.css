@@ -1,0 +1,37 @@
+/*
+Descrição: Curso de HTML5 e CSS3
+Autor: Deise Dall'Agnol
+Conteúdo: Seletores Avançados em CSS3
+*/
+
+.lista li{
+	float: left;
+}
+
+.lista  li:first-child::after{
+	content: '|';
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/*que contenha a palavra google em alguma parte do atributo name*/
+iframe[name*="google"]{
+    display: none;
+}
+
+/*que contenha a palavra google no atributo name*/
+iframe[name="google"]{
+    display: none;
+}
+
+/*Também outro seletor mais fácil é o elemento + elemento, quando precisamos pular o elemento entre eles, selecionando dois específicos.*/
+
+#tlt-texto+ .textos{
+   font-weight: bold;
+}
+
+/*<h2 id="tlt-texto">Título</h2>
+<strong><p>Este parágrafo fica em negrito.</p></strong>
+<p class="textos">O seletor não se aplica ao segundo parágrafo.</p>
+
+O elemento do meio <strong> não irá receber o css.*/
