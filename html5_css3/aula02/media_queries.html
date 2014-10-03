@@ -10,23 +10,10 @@
 
 	<!-- Outra maneira de aplicar Media queries -->
 	<style>
-		@media screen and (max-width: 600px) {
-			 .teste {
-			    /*display: none;*/
-			    background-color: pink;
-			    height: 200px;
-			    width: 200px;
-			 }
-
-			 .listras {
-				 background: repeating-radial-gradient(
-				 circle,
-				 blue,
-				 blue 10px,
-				 #87A9FF 10px,
-				 #87A9FF 20px
-				);
-			}
+		@media all and (max-width: 650px) and (min-width: 520px), (width: 700px) {/*aqui aplicamos uma regra um pouco mais complexa*/
+		  body {
+		    background: #ccc;
+		  }
 		}
 
 
@@ -45,14 +32,104 @@
 			#FFE13A 20px
 			);
 		}
+
+		@media screen and (max-width: 600px) { 
+			/*max-width é o breakpoint pois é quando ele tiver 600px de largura ele vai decidir aplicar esse css */
+			 .teste {
+			    /*display: none;*/
+			    background-color: pink;
+			    height: 200px;
+			    width: 200px;
+			 }
+
+			 .listras {
+				 background: repeating-radial-gradient(
+				 circle,
+				 blue,
+				 blue 10px,
+				 #87A9FF 10px,
+				 #87A9FF 20px
+				);
+			}
+		}
+
+		@media all and (min-width: 800px){
+		  .tlt:before {
+		    content: "Aula de: ";
+		    font-style: italic;
+		    color: #666;
+		  }
+		}
+
+		@media (color) { /* Screen is in color */ }
+
+		@media (min-color-index: 256) { /* Screen has at least 256 colors */ }
+
+		@media (monochrome) { /* Screen is monochrome */ }
+
+		/*logica em media queries*/
+		@media only screen and (min-width: 100px),
+			   not all and (min-width: 100px),
+			   not print and (min-height: 100px),
+			   (color),
+			   (min-height: 100px) and (max-height: 1000px),
+			   handheld and (orientation: landscape)
+			 {
+			   html { color: #000; }
+			 }
 	</style>	
 </head>
 <body>
-<h1>CSS3 Media Queries</h1>
+<h1 class="tlt">CSS3 Media Queries</h1>
 <p>CSS Media queries allow you to target CSS rules based on - for instance - screen size, device-orientation or display-density. This means you can use CSS Media Queries to tweak a CSS for an iPad, printer or create a responsive site.</p>
 <img src="img/css32.png" id="paisagem">
 <div class="teste listras">
 Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
 </div>
+
+<h2>Media Types - Tipos de midia</h2>
+<ul>
+	<li><strong>All</strong>: Para todos os dispositivos. </li>
+	<li><strong>Braille</strong>: Para dispositivos táteis.</li>
+	<li><strong>Embossed</strong>: Para dispositivos que imprimem em braile.</li>
+	<li><strong>Handheld</strong>: Para dispositivos portáteis, geralmente com telas pequenas e banda limitada.</li>
+	<li><strong>Print</strong>: Para impressão em papel.</li>
+	<li><strong>Projection</strong>: Para apresentações como PPS.</li>
+	<li><strong>Screen</strong>: Para monitores ou dispositivos com telas coloridas e resolução adequada.</li>
+	<li><strong>Speech</strong>: Para sintetizadores de voz. As CSS 2 tem uma especificação de CSS chamada Aural, onde podemos formatar a voz dos sintetizadores.</li>
+	<li><strong>Tty</strong>: Para dispositivos que possuem uma grade fixa para exibição de caracteres, tais como: Teletypes, Terminais e também dispositivos portáteis com display limitados.</li>
+	<li><strong>Tv</strong>: Para dispositivos como  televisores, ou seja, com baixa resolução, quantidade de cores e scroll limitados. </li>
+</ul>
+
+<h2>Atributos usados para decidir os breakpoints</h2>
+<ul>
+	<li>width</li>
+	<li>height</li>
+	<li>device-width</li>
+	<li>device-height</li>
+	<li>orientation</li>
+	<li>aspect-ratio</li>
+	<li>device-aspect-ratio</li>
+	<li>color</li>
+	<li>color-index</li>
+	<li>monochrome</li>
+	<li>resolution</li>
+	<li>scan</li>
+	<li>grid</li>
+</ul>
+
+<h3>Dicas</h3>
+<p><strong>Não use device-driven breakpoints (baseado no tamanho do dispositivo), Use content-driven breakpoints (baseado na aparência do conteúdo)</strong></p>
+<p><strong>Remove menus and fluff(perfumarias) from Print pages</strong></p>
+
+
+<h3>Links Interessantes</h3>
+<ul>
+	<li><a href="http://sergiolopes.org/media-queries-zoom/">media-queries-zoom</a></li>
+	<li><a href="http://sergiolopes.org/media-queries-conteudo/ ">media-queries-conteudo/ </a></li>
+	<li><a href="http://sergiolopes.org/responsive-video-play/">responsive-video-play</a></li>
+	<li><a href="http://cssmediaqueries.com/what-are-css-media-queries.html">what-are-css-media-queries</a></li>
+	<li><a href="http://css-tricks.com/logic-in-media-queries/">logic-in-media-queries</a></li>	
+</ul>
 </body>
 </html>
