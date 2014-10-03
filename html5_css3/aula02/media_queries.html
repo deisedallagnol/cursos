@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Media Queries - HTML5</title>
+	<!-- Media queries -->
+	<link rel='stylesheet' media='all' href='normal.css' />
+	<link rel='stylesheet' media='print' href='print.css' />
+	<link rel='stylesheet' media='screen and (max-width: 600px)' href='medium.css' />
+
+	<!-- Outra maneira de aplicar Media queries -->
+	<style>
+		@media screen and (max-width: 600px) {
+			 .teste {
+			    /*display: none;*/
+			    background-color: pink;
+			    height: 200px;
+			    width: 200px;
+			 }
+
+			 .listras {
+				 background: repeating-radial-gradient(
+				 circle,
+				 blue,
+				 blue 10px,
+				 #87A9FF 10px,
+				 #87A9FF 20px
+				);
+			}
+		}
+
+
+		@media print {
+		    #paisagem {
+		        display: none;
+		    }
+		}
+
+		.listras {
+			background: repeating-linear-gradient(
+			90deg,
+			#FCFF7C,
+			#FCFF7C 10px,
+			#FFE13A 10px,
+			#FFE13A 20px
+			);
+		}
+	</style>	
+</head>
+<body>
+<h1>CSS3 Media Queries</h1>
+<p>CSS Media queries allow you to target CSS rules based on - for instance - screen size, device-orientation or display-density. This means you can use CSS Media Queries to tweak a CSS for an iPad, printer or create a responsive site.</p>
+<img src="img/css32.png" id="paisagem">
+<div class="teste listras">
+Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
+</div>
+</body>
+</html>
