@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Media Queries (Breakpoints) - HTML5</title>
+	<!-- Media queries -->
+	<link rel='stylesheet' media='screen and (max-width: 600px)' href='style.css' />
+
+	<!-- Outra maneira de aplicar Media queries -->
+	<style>
+		@media all and (min-width: 800px){
+		  .tlt:before {
+		    content: "Aula de: ";
+		    font-style: italic;
+		    color: #666;
+		  }
+		}
+	</style>	
+</head>
+<body>
+<h1 class="tlt">Breakpoints</h1>
+<p>Breakponins é o ponto de decisão que informamos quando o CSS deve ser aplicado. No exemplo acima, 
+o CSS é aplicado quando a página estiver com no mínimo 800px de largura.
+</p>
+<p>Outro exemplo acima é aplicado para um CSS externo, ele chama o arquivo style.css quando a tela tiver no máximo 600px de largura.</p>
+</body>
+</html>
