@@ -1,0 +1,95 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background: #222;
+	overflow-x: hidden;
+}
+
+header {
+	background: #870a0c url(images/city.jpg) repeat-x;
+	-webkit-animation: move-city-top 15s infinite linear;
+	height: 125px;
+	position: relative;
+	border-top: 10px solid #ba2d14;
+	border-bottom: 10px solid #ba2d14;
+}
+
+#rampage {
+	width: 454px;
+	height: 170px;
+	position: absolute;
+	top: -10px;
+	left: 50px;
+	background: url(images/rampage.png) no-repeat;
+	z-index: 3;
+	-webkit-animation: 
+		shimmy-shimmy-shake 0.5s 1s infinite alternate,
+		show-yourself 1s 1;
+}
+
+#coptor {
+	position: absolute;
+	top: 30px;
+	left: 100%;
+	-webkit-animation: fly-by-night 10s linear infinite;
+	z-index: 50;
+}
+
+.bullet {
+	position: absolute;
+	top: 99px;
+	left: 49%;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-animation: kapow 10s 2.5s linear infinite;
+	z-index: 49;
+	width: 10px; 
+	height: 10px;
+	background: white;
+}
+.bullet-2 {
+	-webkit-animation: kapow 10s 2.6s linear infinite;
+}
+
+
+
+/* 
+	Animation Definitions 
+*/
+
+@-webkit-keyframes move-city-top {
+	from { background-position: 0 -50px; }
+	to   { background-position: -533px -50px; }
+}
+
+@-webkit-keyframes shimmy-shimmy-shake {
+	from { left: 50px; }
+	to   { left: 65px; }
+}
+
+@-webkit-keyframes show-yourself {
+	from { left: -1000px; }
+	to   { left: 50px }
+}
+
+@-webkit-keyframes fly-by-night {
+	0%  {  top: 30px; left: 100%; }
+	10% { top: 50px; left: 90%;   }
+	20% { top: 30px; left: 80%;   }
+	30% { top: 50px; left: 70%;   }
+	40% { top: 30px; left: 60%;   }
+	50% { top: 50px; left: 50%;   }
+	60% { top: 30px; left: 40%;   }
+	70% { top: 50px; left: 30%;   }
+	80% { top: 30px; left: 20%;   }
+	90% { top: 50px; left: 10%;   }
+	100% { top: 30px; left: -10%; }
+}
+
+@-webkit-keyframes kapow {
+	0% { left: 75%; opacity: 1; }
+	100% { left: -230%; }
+}
