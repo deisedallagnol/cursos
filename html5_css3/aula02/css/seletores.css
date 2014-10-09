@@ -41,6 +41,39 @@ textarea {
 
 }
 
+.elemento::first-letter{
+  
+}
+/*
+http://www.w3schools.com/css/css_pseudo_elements.asp
+
+Definition and Usage
+The ::first-letter selector is used to add a style to the first letter of the specified selector.
+
+Note: The following properties can be used with ::first-letter: 
+
+font properties
+color properties 
+background properties
+margin properties
+padding properties
+border properties
+text-decoration
+vertical-align (only if float is 'none')
+text-transform
+line-height
+float
+clear
+Note: The ::first-letter selector can only be used with block-level elements.
+
+
+::first-letter is a pseudo element which allows you to style the first letter in an element, without needing to stick a <span> around that first letter in your HTML. While no tags are added to the DOM, it is as if the targeted first letter were encompassed in a <firstletter> tag. You can style that first letter as you would a real element with:
+The pseudo element only works if the parent element is a block container box (in other words, it doesn't work on the first letter of display: inline; elements.)
+If you have both a ::first-letter and ::first-line on an element, the first letter will inherit from the first line styles, but styles on the ::first-letter will overwrite when styles conflict.
+If you generate content with ::before, the first letter or punctuation character, whether it's part of the original text node or created with generated content, will be the target.
+When using for drop-caps, use in conjunction with p:first-of-type so not every first letter gets styled
+*/
+
 /*Conteúdo estático no CSS*/
 .elemento::before {
 display: block;
@@ -48,3 +81,4 @@ margin: 0 0 35px 2px;
 color: #1D8CBA;
 content: 'sss';
 }
+

@@ -1,0 +1,56 @@
+<h1>Selectors API Level 1</h1>
+
+Some ECMAScript [ECMA-262-5.1] examples:
+
+This is an example table written in HTML 4.01.
+<pre>
+<table id="score">
+  <thead>
+    <tr>
+      <th>Test
+      <th>Result
+  <tfoot>
+    <tr>
+      <th>Average
+      <td>82%
+  <tbody>
+    <tr>
+      <td>A
+      <td>87%
+    <tr>
+      <td>B
+      <td>78%
+    <tr>
+      <td>C
+      <td>81%
+</table>
+</pre>
+<p>In order to obtain the cells containing the results in the table, which might be done, for example, to plot the values on a graph, there are at least two approaches that may be taken. Using only the APIs from DOM Level 2, it requires a script like the following that iterates through each tr within each tbody in the table to find the second cell of each row.</p>
+<pre>
+<code>
+  var table = document.getElementById("score");
+  var groups = table.tBodies;
+  var rows = null;
+  var cells = [];
+
+for (var i = 0; i < groups.length; i++) {
+  rows = groups[i].rows;
+  for (var j = 0; j < rows.length; j++) {
+    cells.push(rows[j].cells[1]);
+  }
+}
+</code>
+</pre>
+<p>
+Alternatively, using the querySelectorAll() method, that script becomes much more concise.
+</p>
+<code>var cells = document.querySelectorAll("#score>tbody>tr>td:nth-of-type(2)");</code>
+
+<p>
+Note that the script operates on the DOM and works independently from the syntax used to create the document. Thus this script will also work correctly for an equivalent table created from well-formed XHTML instead of HTML, or dynamically created and inserted into a document using DOM APIs.
+<p/>
+
+<h2>Links Interessantes</h2>
+<ul>
+  <li><a href="http://www.w3.org/TR/selectors-api/">Selectors API</a></li>
+</ul>
