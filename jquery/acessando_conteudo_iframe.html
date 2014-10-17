@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="py-br">
+<head>
+  <meta charset="utf-8">
+  <title>contents demo</title>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+  		/*acessando um elemento no iframe*/
+		$( "#frameDemo" ).contents().find( "a" ).css( "background-color", "#BADA55" );
+
+		/*acessando e vinculando um evento*/
+		$(".zopim:last iframe").contents().find(".icon_font[title=Minimizar]").click(function(){
+			$('.zopim:last').css('display','none');
+		});
+</script>
+</head>
+<body>
+ 
+<iframe src="conteudo_teste.html" width="300px" height="200" id="frameDemo"></iframe>
+
+<div>
+	<iframe src="conteudo_teste.html" width="300px" height="200" id="frameDemo"></iframe>
+</div>
+ http://simple.procoding.net/2008/03/21/how-to-access-iframe-in-jquery/
+ http://api.jquery.com/contents/
+ http://css-tricks.com/almanac/properties/s/scrollbar/
+ http://css-tricks.com/custom-scrollbars-in-webkit/
+ http://codemug.com/html/custom-scrollbars-using-css/
+ https://medium.com/@shankarcabus/css-escalavel-parte-1-41e7e863799e?ct=t(BrazilJS_Weekly_468_9_2013)
+ http://tableless.com.br/javascript-objetos-literais-vs-funcoes-construtoras/
+ http://codeinbrasil.wordpress.com/2013/04/28/como-aprender-javascript-corretamente-javascript-is-sexy/
+</body>
+</html>
