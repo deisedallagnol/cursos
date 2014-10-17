@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>attributeMultiple demo</title>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <style>
+  /*selecione o input que tenha em alguma parte do id e o name a palavra 'man'*/
+  	input[id][name$='man']{
+  		background-color: pink;
+  	}
+  </style>
+</head>
+<body>
+ 
+<input id="man-news" name="man-news">
+<input name="milkman">
+<input id="letterman" name="new-letterman">
+<input name="newmilk">
+ 
+<script>
+$( "input[id][name$='man']" ).val( "somente esse recebe essa frase" );
+</script>
+ 
+</body>
+</html>
