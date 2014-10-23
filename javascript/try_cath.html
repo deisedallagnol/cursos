@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Try Catch - Javascript</title>
+<script type="text/javascript">
+    var x = 1;
+ 
+    try{
+      if(x == 0) throw "E1";
+      else if(x == 1) throw "E2";
+    }
+    catch(ex){
+      if (ex == "E1") window.alert('A variável está zerada!');
+      else if(ex == "E2") window.alert('A variável é 1: deve ser maior.');
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
