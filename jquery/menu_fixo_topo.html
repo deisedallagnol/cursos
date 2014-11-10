@@ -1,0 +1,46 @@
+Em javascript puro
+Bem simples:
+
+window.onscroll = function(){
+   var top = window.pageYOffset || document.documentElement.scrollTop
+   if( top > 300 ) {
+       console.log('Maior que 300');
+   }
+}
+Em jQuery
+Apenas caso vc já esteja com a lib incorporada, pois não vale nenhum pouco a pena coloca-la apenas por causa disso:
+
+var $w = $(window);
+ 
+$w.on("scroll", function(){
+   if( $w.scrollTop() > 300 ) {
+       console.log('Maior que 300');
+   }
+});
+
+OU
+
+ $(window).scroll(function () {     
+        if ($(this).scrollTop() > 118) {
+            $('#header_busca').addClass("fixa");
+            //$('#header_busca').css('position','fixed');
+            $('#ocupa_header_busca').css('display','block');
+        } else {
+            $('#header_busca').removeClass("fixa");
+           // $('#header_busca').css('position','initial');
+           $('#ocupa_header_busca').css('display','none');
+        }
+    });  
+
+
+OU
+
+var offset = $('#meuMenu').offset().top;
+var $meuMenu = $('#meuMenu');
+$(document).on('scroll', function () {
+    if (offset <= $(window).scrollTop()) {
+        $meuMenu.addClass('fixar');
+    } else {
+        $meuMenu.removeClass('fixar');
+    }
+});

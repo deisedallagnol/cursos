@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>attributeMultiple demo</title>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <style>
+  /*selecione o input que tenha em alguma parte do id e o name a palavra 'man'*/
+  	input[id][name$='man']{
+  		background-color: pink;
+  	}
+
+  	.hide{
+  		display: none;
+  	}
+  </style>
+</head>
+<body>
+ 
+<ul class="menu">
+	<li>Teste 1</li>
+	<li>Teste 1</li>
+	<li>Teste 1</li>
+	<li id="stop">Teste 1</li>
+	<li>Teste 1</li>
+	<li>Teste 1</li>
+	<li>ver mais</li>
+</ul>
+<span class="mais">ver mais</span>
+
+ 
+<script>
+/*for (i = 3; i < $('.menu').length; i++) { 
+    text += cars[i] + "<br>";
+}
+
+for (i = 0; i < cars.length; i++) { 
+    text += cars[i] + "<br>";
+}*/
+
+ $(".menu li").each(function( index, element ) {
+	if ( $( this ).is( "#stop" ) ) {
+      $( this ).text( "Stopped at div index #" + index );
+      return false;
+    }
+ });
+
+  $(".menu li").each(function( index, element ) {
+	if ( index > 3 ) {
+      $( this ).text( "Stopped at div index #" + index );      
+    }
+ });
+
+    $(".menu li").each(function( index, element ) {
+	if ( index > 3 ) {
+      $(this).hide();      
+    }
+ });
+
+$(".mais").click(function() {
+	
+
+	if($(this).attr('rel') == 'mais'){
+		$(this).attr('rel', 'mais');
+		$(this).html('ver mais');
+	}else{
+		$(this).html('ver menos');
+		$(this).attr('rel', 'menos');
+	}
+	$(".menu li").each(function( index, element ) {
+		if ( index > 3 ) {			
+	    	 $(this).slideToggle();	    
+		}
+ 	});
+});
+</script>
+ 
+</body>
+</html>
