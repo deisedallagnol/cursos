@@ -4,6 +4,28 @@
 	<title>Padrões Web - Formulários - por Deise Dall'Agnol</title>
 </head>
 <body>
-
+<h2>Formulários</h2>
+<form name="frm" id="frm_cadastro" action="grava_form.php" enctype="multipart/form-data" method="POST">
+<fieldset>
+<legend>Cadastro</legend>
+	<label for="nome">Nome:</label>
+	<input type="text" name="nome">
+	
+	<br />
+	
+	<label for="sexo">Sexo:</label>
+	<input type="radio" name="sexo" value="F"> F
+	<input type="radio" name="sexo" value="M"> M
+	
+	<br />
+	
+	<label for="bio">Bio:</label>
+	<textarea name="bio"></textarea>
+	
+	<br />
+	<input type="reset" value="Limpar">
+	<input type="submit" value="Enviar">
+</fieldset>
+</form>
 </body>
 </html>
