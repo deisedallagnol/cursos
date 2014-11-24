@@ -1,3 +1,11 @@
 .test-ie{
 	color: #0101FC;
 }
+
+.testepie{
+	background-image: url(../img/heart.png);
+	background-size: contain;
+	height: 30px;
+	width: 30px;
+	behavior: url(PIE.htc);
+}
