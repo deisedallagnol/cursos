@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Metatags</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Curso de HTML5 e CSS3, novidades e informações.">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="author" content="Deise Dall'Agnol">
+	<meta http-equiv="refresh" content="5">
+	<meta name="robots" content="index,follow">
+	<meta name="robots" content="noindex,follow">
+	<meta name="robots" content="index,nofollow">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="robots" content="noarchive">
+</head>
+<body>
+<h2>Metatags</h2>
+
+Portanto:
+
+<meta name="robots" content="index,follow">
+
+Indexa a página inicial e todas as páginas nela referenciadas.
+
+<meta name="robots" content="noindex,follow">
+
+A instrução acima não indexa a página inicial, mas indexa as páginas nela referenciadas.
+
+<meta name="robots" content="index,nofollow">
+
+A instrução anterior indexa a página inicial, mas nenhum link existente nela.
+
+<meta name="robots" content="noindex,nofollow">
+
+Por fim, a instrução acima não indexa nem a página inicial e nem seus links.
+
+Portanto, se você quiser evitar que os sites de busca encontrem seu site, use a última opção. Porém, se você quiser que apenas o Google não encontre seu site ou se quiser remover uma página dos seus resultados de busca a partir da próxima varredura, pode utilizar a seguinte tag:
+
+<meta name="googlebot" content="noindex,nofollow">
+
+A maioria dos buscadores armazena uma cópia da sua página em cache, para otimizar a busca. Para evitar isso, você pode utilizar a tag a seguir:
+
+<meta name="robots" content="noarchive">
+</body>
+</html>
