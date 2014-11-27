@@ -1,0 +1,41 @@
+<h2>Pseudo classes</h2>
+
+<section class="article_body">
+
+          <p>A pseudo-class is similar to a class in HTML, but it’s not specified explicitly in the markup. Some pseudo-classes are dynamic — they’re applied as a result of user interaction with the document.</p>
+<p>A pseudo-class starts with a colon (:). No whitespace may appear between a type selector or universal selector and the colon, nor can whitespace appear after the colon.</p>
+<p>CSS1 introduced the <a title="matches link elements that are unvisited" href="http://reference.sitepoint.com/css/pseudoclass-link"><code class="cssselector">:link</code></a>, <a title="matches link elements that have been visited" href="http://reference.sitepoint.com/css/pseudoclass-visited"><code class="cssselector">:visited</code></a>, and <a title="matches any element that’s being activated by the user" href="http://reference.sitepoint.com/css/pseudoclass-active"><code class="cssselector">:active</code></a> pseudo-classes, but only for the HTML <code class="element">a</code> element. These pseudo-classes represented the state of links—unvisited, visited, or currently being selected—in a web page document. In CSS1, all three pseudo-classes were mutually exclusive.</p>
+<p>CSS2 expanded the range of pseudo-classes and ensured that they could be applied to any element. <code class="cssselector">:link</code> and <code class="cssselector">:visited</code> now apply to any element defined as a link in the document language. While they remain mutually exclusive, the <code class="cssselector">:active</code> pseudo-class now joins <a title="matches elements that are being designated by a pointing device" href="http://reference.sitepoint.com/css/pseudoclass-hover"><code class="cssselector">:hover</code></a> and <a title="matches any element that’s currently in focus" href="http://reference.sitepoint.com/css/pseudoclass-focus"><code class="cssselector">:focus</code></a> in the group of dynamic pseudo-classes. The <code class="cssselector">:hover</code> pseudo-class matches elements that are being designated by a pointing device (for example, elements that the user’s hovering the cursor over); <code class="cssselector">:active</code> matches any element that’s being activated by the user; and <code class="cssselector">:focus</code> matches any element that is currently in focus (that is, accepting input).</p>
+<p>CSS2 also introduced the <a title="allows elements to be matched on the basis of their languages" href="http://reference.sitepoint.com/css/pseudoclass-lang"><code class="cssselector">:lang</code></a> pseudo-class to allow an element to be matched on the basis of its language, and the <a title="matches any element that’s the first child element of its parent" href="http://reference.sitepoint.com/css/pseudoclass-firstchild"><code class="cssselector">:first-child</code></a> pseudo-class to match an element that’s the first child element of its parent.</p>
+<p>CSS3 promises an even <a title="" href="http://reference.sitepoint.com/css/css3psuedoclasses">greater range of powerful pseudo-classes</a>.</p>
+<p>Remember that pseudo-classes, like <a title="matches an element with a specific id attribute value" href="http://reference.sitepoint.com/css/idselector">ID selectors</a> and <a title="selects elements based on attribute values" href="http://reference.sitepoint.com/css/attributeselector">attribute selectors</a>, act like modifiers on <a title="matches elements with the specified element type name" href="http://reference.sitepoint.com/css/elementtypeselector">type selectors</a> and the <a title="matches any element type" href="http://reference.sitepoint.com/css/universalselector">universal selector</a>: they specify additional constraints for the selector pattern, but they don’t specify other elements. For instance, the selector <code class="cssselector">li:first-child</code> matches a list item that’s the first child of its parent; it <em>doesn’t</em> match the first child of a list item.</p>
+<p>A simple selector can contain more than one pseudo-class if the pseudo-classes aren’t mutually exclusive. For example, the selectors <code class="cssselector">a:link:hover</code> and <code class="cssselector">a:visited:hover</code> are valid, but <code class="cssselector">a:link:visited</code> isn’t because <code class="cssselector">:link</code> and <code class="cssselector">:visited</code> are mutually exclusive. An element is either an unvisited link or a visited link.</p>
+<p>The order of declaration is very important for the dynamic pseudo-classes <code class="cssselector">:hover</code>, <code class="cssselector">:focus</code>, and <code class="cssselector">:active</code>, depending on what you wish to achieve. The most commonly desired behavior for links is as follows:</p>
+<pre><code class="css">a:link {
+  ⋮ <span>declarations</span>
+}
+
+a:visited {
+  ⋮ <span>declarations</span>
+}
+
+a:focus {
+  ⋮ <span>declarations</span>
+}
+
+a:hover {
+  ⋮ <span>declarations</span>
+}
+
+a:active {
+  ⋮ <span>declarations</span>
+}</code></pre>
+<div class="admonition tip">
+<div class="notetitle"><strong>Tip: </strong>Dynamic Pseudo-class Mnemonics</div>
+<p>Several mnemonics have been devised to help us remember this order, including “LoVe Frogs HAppy,” “Las Vegas Fights Hell’s Angels,” and—for the <cite>Star Wars</cite> fans—“Lord Vader, Former Handle Anakin.”</p>
+</div>
+<p>The <code class="cssselector">:link</code> and <code class="cssselector">:visited</code> pseudo-classes should generally come first. Next should be <code class="cssselector">:focus</code> and <code class="cssselector">:hover</code> they’re specified now so that they override and apply to both visited and unvisited links. If <code class="cssselector">:focus</code> precedes <code class="cssselector">:hover</code>, the hover effect will apply to links with keyboard input focus. The <code class="cssselector">:active</code> pseudo-class should always come last, since we usually want to indicate clearly any links that have been activated.</p>
+<p>This isn’t the only useful order, nor is it in any way the “right” order. The order in which you specify your pseudo-classes will depend on the effects you want to show with different combinations of states. It’s possible, for instance, that you might want to have different hover or focus effects on visited and unvisited links. In that case, you could combine pseudo-classes: <code class="cssselector">a:link:hover</code>.</p>
+<p>If you want to apply special styling to the hover state of a link that also has keyboard input focus, use <code class="cssselector">a:focus:hover</code>.</p>
+
+      </section>

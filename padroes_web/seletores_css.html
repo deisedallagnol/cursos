@@ -1,1 +1,169 @@
-seletores_css.html
+<h2>Seletores CSS</h2>
+
+<section class="article_body">
+
+          <h2>Introducing CSS Selectors</h2>
+<p>A CSS selector is the part of a CSS rule set that actually selects the content you want to style. Let’s look at all the different kinds of selectors available, with a brief description of each.</p>
+<h2>Universal Selector</h2>
+<p>The <em>universal selector</em> works like a wild card character, selecting all elements on a page. Every HTML page is built on content placed within HTML tags. Each set of tags represents an element on the page. Look at the following CSS example, which uses the universal selector:</p>
+<pre class="programlisting"><code>* {
+&nbsp;&nbsp;&nbsp;color: green;
+&nbsp;&nbsp;&nbsp;font-size: 20px;
+&nbsp;&nbsp;&nbsp;line-height: 25px;
+}</code></pre>
+<p>The three lines of code inside the curly braces (<code>color</code>, <code>font-size</code>, and <code>line-height</code>) will apply to all elements on the HTML page. As seen here, the universal selector is declared using an asterisk. You can also use the universal selector in combination with other selectors.</p>
+<h2>Element Type Selector</h2>
+<p>Also referred to simply as a “type selector,” this selector must match one or more HTML elements of the same name. Thus, a selector of nav would match all HTML <code class="sgmltag-element">nav</code> elements, and a selector of <code class="sgmltag-element">&lt;ul&gt;</code> would match all HTML unordered lists, or <code class="sgmltag-element">&lt;ul&gt;</code> elements.</p>
+<p>The following example uses an element type selector to match all <code class="sgmltag-element">&lt;ul&gt;</code> elements:</p>
+<pre class="programlisting"><code>ul {
+&nbsp;&nbsp;&nbsp;list-style: none;
+&nbsp;&nbsp;&nbsp;border: solid 1px #ccc;
+}</code></pre>
+<p>To put this in some context, here’s a section of HTML to which we’ll apply the above CSS:</p>
+<pre class="programlisting"><code>&lt;ul&gt;
+  &lt;li&gt;Fish&lt;/li&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Cheese&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="example"&gt;
+  &lt;p&gt;Example paragraph text.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Water&lt;/li&gt;
+  &lt;li&gt;Juice&lt;/li&gt;
+  &lt;li&gt;Maple Syrup&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>There are three main elements making up this part of the page: Two <code class="sgmltag-element">&lt;ul&gt;</code> elements and a <code class="sgmltag-element">&lt;div&gt;</code>. The CSS will apply only to the two <code class="sgmltag-element">&lt;ul&gt;</code> elements, and not to the <code class="sgmltag-element">&lt;div&gt;</code>. Were we to change the element type selector to use <code class="sgmltag-element">&lt;div&gt;</code> instead of <code class="sgmltag-element">&lt;ul&gt;</code>, then the styles would apply to the <code class="sgmltag-element">&lt;div&gt;</code> and not to the two <code class="sgmltag-element">&lt;ul&gt;</code> elements.</p>
+<p>Also note that the styles will not apply to the elements inside the <code class="sgmltag-element">&lt;ul&gt;</code> or <code class="sgmltag-element">&lt;div&gt;</code> elements. That being said, some of the styles may be inherited by those inner elements.</p>
+<h2>ID Selector</h2>
+<p>An ID selector is declared using a hash, or pound symbol (<code>#</code>) preceding a string of characters. The string of characters is defined by the developer. This selector matches any HTML element that has an ID attribute with the same value as that of the selector, but minus the hash symbol.</p>
+<p>Here’s an example:</p>
+<pre class="programlisting"><code>#container {
+&nbsp;&nbsp;&nbsp;width: 960px;
+&nbsp;&nbsp;&nbsp;margin: 0 auto;
+}</code></pre>
+<p>This CSS uses an ID selector to match an HTML element such as:</p>
+<pre class="programlisting"><code>&lt;div id="container"&gt;&lt;/div&gt;</code></pre>
+<p>In this case, the fact that this is a <code class="sgmltag-element">&lt;div&gt;</code> element doesn’t matter—it could be any kind of HTML element. As long as it has an ID attribute with a value of <code>container</code>, the styles will apply.</p>
+<p>An ID element on a web page should be unique. That is, there should only be a single element on any given page with an ID of <code>container</code>. This makes the ID selector quite inflexible, because the styles used in the ID selector rule set can be used only once per page.</p>
+<p>If there happens to be more than one element on the page with the same ID, the styles will still apply, but the HTML on such a page would be invalid from a technical standpoint, so you’ll want to avoid doing this.</p>
+<p>In addition to the problems of inflexibility, ID selectors also have the problem of very high specificity.</p>
+<h2>Class Selector</h2>
+<p>The class selector is the most useful of all CSS selectors. It’s declared with a dot preceding a string of one or more characters. Just as is the case with an ID selector, this string of characters is defined by the developer. The class selector also matches all elements on the page that have their class attribute set to the same value as the class, minus the dot.</p>
+<p>Take the following rule set:</p>
+<pre class="programlisting"><code>.box {
+&nbsp;&nbsp;&nbsp;padding: 20px;
+&nbsp;&nbsp;&nbsp;margin: 10px;
+&nbsp;&nbsp;&nbsp;width: 240px;
+}</code></pre>
+<p>These styles will apply to the following HTML element:</p>
+<pre class="programlisting"><code>&lt;div class="box"&gt;&lt;/div&gt;</code></pre>
+<p>The same styles will also apply to any other HTML elements that have a class attribute with a value of <code>box</code>. Having multiple elements on a single page with the same class attribute is beneficial, because it allows you to reuse styles, and avoid needless repetition. In addition to this, class selectors have very low specificity—again, more on this later.</p>
+<p>Another reason the class selector is a valuable ally is that HTML allows multiple classes to be added to a single element. This is done by separating the classes in the HTML class attribute using spaces. Here’s an example:</p>
+<pre class="programlisting"><code>&lt;div class=”box box-more box-extended”&gt;&lt;/div&gt;</code></pre>
+<h2>Descendant Combinator</h2>
+<p>The descendant selector or, more accurately, the descendant combinator lets you combine two or more selectors so you can be more specific in your selection method. For example:</p>
+<pre class="programlisting"><code>#container .box {
+&nbsp;&nbsp;&nbsp;float: left;
+&nbsp;&nbsp;&nbsp;padding-bottom: 15px;
+}</code></pre>
+<p>This declaration block will apply to all elements that have a class of box that are inside an element with an ID of <code>container</code>. It’s worth noting that the <code>.box</code> element doesn’t have to be an immediate child: there could be another element wrapping <code>.box</code>, and the styles would still apply.</p>
+<p>Look at the following HTML:</p>
+<pre class="programlisting"><code>&lt;div id="container"&gt;
+  &lt;div class="box"&gt;&lt;/div&gt;
+
+  &lt;div class="box-2"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="box"&gt;&lt;/div&gt;</code></pre>
+<p>If we apply the CSS in the previous example to this section of HTML, the only element that’ll be affected by those styles is the first <code class="sgmltag-element">&lt;div&gt;</code> element that has a class of <code>box</code>. The <code class="sgmltag-element">&lt;div&gt;</code> element that has a class of <code>box-2</code> won’t be affected by the styles. Similarly, the second <code class="sgmltag-element">&lt;div&gt;</code> element with a class of <code>box</code> won’t be affected because it’s not inside an element with an ID of <code>container</code>.</p>
+<p>You should be careful when using the descendant combinator in your CSS. This kind of selector, while making your CSS a little easier to read, can unnecessarily restrict your styles to a specific context—in this case, the styles are restricted to boxes inside of <code>#container</code>—which can make your code inflexible.</p>
+<h2>Child Combinator</h2>
+<p>A selector that uses the <code>child</code> combinator is similar to a selector that uses a descendant combinator, except it only targets immediate <code>child</code> elements:</p>
+<pre class="programlisting"><code>#container &gt; .box {
+&nbsp;&nbsp;&nbsp;float: left;
+&nbsp;&nbsp;&nbsp;padding-bottom: 15px;
+}</code></pre>
+<p>This is the same code from the descendant combinator example, but instead of a space character, we’re using the greater-than symbol (or right angle bracket.)</p>
+<p>In this example, the selector will match all elements that have a class of <code>box</code> and that are immediate children of the <code>#container</code> element. That means, unlike the descendant combinator, there can’t be another element wrapping <code>.box</code>—it has to be a direct child element.</p>
+<p>Here’s an HTML example:</p>
+<pre class="programlisting"><code>&lt;div id="container"&gt;
+  &lt;div class="box"&gt;&lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;div class="box"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>In this example, the CSS from the previous code example will apply only to the first <code class="sgmltag-element">&lt;div&gt;</code> element that has a class of <code>box</code>. As you can see, the second <code class="sgmltag-element">&lt;div&gt;</code> element with a class of <code>box</code> is inside another <code class="sgmltag-element">&lt;div&gt;</code> element. As a result, the styles will not apply to that element, even though it too has a class of <code>box</code>.</p>
+<p>Again, selectors that use this combinator can be somewhat restricting, but they can come in handy—for example, when styling nested lists.</p>
+<h2>General Sibling Combinator</h2>
+<p>A selector that uses a general sibling combinator matches elements based on sibling relationships. That is to say, the selected elements are beside each other in the HTML.</p>
+<pre class="programlisting"><code>h2 ~ p {
+&nbsp;&nbsp;&nbsp;margin-bottom: 20px;
+}</code></pre>
+<p>This type of selector is declared using the tilde character (~). In this example, all paragraph elements (<code class="sgmltag-element">&lt;p&gt;</code>) will be styled with the specified rules, but only if they are siblings of <code class="sgmltag-element">&lt;h2&gt;</code> elements. There could be other elements in between the <code class="sgmltag-element">&lt;h2&gt;</code> and <code class="sgmltag-element">&lt;p&gt;</code>, and the styles would still apply.</p>
+<p>Let’s apply the CSS from above to the following HTML:</p>
+<pre class="programlisting"><code>&lt;h2&gt;Title&lt;/h2&gt;
+&lt;p&gt;Paragraph example.&lt;/p&gt;
+&lt;p&gt;Paragraph example.&lt;/p&gt;
+&lt;p&gt;Paragraph example.&lt;/p&gt;
+&lt;div class="box"&gt;
+  &lt;p&gt;Paragraph example.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p>In this example, the styles will apply only to the first three paragraph elements. The last paragraph element is not a sibling of the <code class="sgmltag-element">&lt;h2&gt;</code> element because it sits inside the <code class="sgmltag-element">&lt;div&gt;</code> element.</p>
+<h2>Adjacent Sibling Combinator</h2>
+<p>A selector that uses the adjacent sibling combinator uses the plus symbol (+), and is almost the same as the general sibling selector. The difference is that the targeted element must be an immediate sibling, not just a general sibling. Let’s see what the CSS code for this looks like:</p>
+<pre class="programlisting"><code>p + p {
+&nbsp;&nbsp;&nbsp;text-indent: 1.5em;
+&nbsp;&nbsp;&nbsp;margin-bottom: 0;
+}</code></pre>
+<p>This example will apply the specified styles only to paragraph elements that immediately follow other paragraph elements. This means the first paragraph element on a page would not receive these styles. Also, if another element appeared between two paragraphs, the second paragraph of the two wouldn’t have the styles applied.</p>
+<p>So, if we apply this selector to the following HTML:</p>
+<pre class="programlisting"><code>&lt;h2&gt;Title&lt;/h2&gt;
+&lt;p&gt;Paragraph example.&lt;/p&gt;
+&lt;p&gt;Paragraph example.&lt;/p&gt;
+&lt;p&gt;Paragraph example.&lt;/p&gt;
+
+&lt;div class="box"&gt;
+  &lt;p&gt;Paragraph example.&lt;/p&gt;
+  &lt;p&gt;Paragraph example.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p>…the styles will apply only to the second, third, and fifth paragraphs in this section of HTML.</p>
+<h2>Attribute Selector</h2>
+<p>The attribute selector targets elements based on the presence and/or value of HTML attributes, and is declared using square brackets:</p>
+<pre class="programlisting"><code>input[type="text"] {
+&nbsp;&nbsp;&nbsp;background-color: #444;
+&nbsp;&nbsp;&nbsp;width: 200px;
+}</code></pre>
+<p>There should not be a space before the opening square bracket unless you intend to use it along with a descendant combinator. The above CSS would match the following element:</p>
+<pre class="programlisting"><code>&lt;input type="text"&gt;</code></pre>
+<p>But it wouldn’t match this one:</p>
+<pre class="programlisting"><code>&lt;input type="submit"&gt;</code></pre>
+<p>The attribute selector can also be declared using just the attribute itself, with no value, like this:</p>
+<pre class="programlisting"><code>input[type] {
+&nbsp;&nbsp;&nbsp;background-color: #444;
+&nbsp;&nbsp;&nbsp;width: 200px;
+}</code></pre>
+<p>This will match all input elements with an attribute of type, regardless of the value.</p>
+<p>You can also use attribute selectors without specifying anything outside the square brackets (thus targeting based on the attribute alone, irrespective of the element). It’s also worth noting that, when using values, you have the option to include quotes (single or double,) or not.</p>
+<h2>Pseudo-class</h2>
+<p>A pseudo-class uses a colon character to identify a pseudo-state that an element might be in—for example, the state of being hovered, or the state of being activated. Let’s look at a common example:</p>
+<pre class="programlisting"><code>a:hover {
+&nbsp;&nbsp;&nbsp;color: red;
+}</code></pre>
+<p>In this case, the pseudo-class portion of the selector is the <code>:hover</code> part. Here we’ve attached this pseudo-class to all anchor elements (<code><a></a></code> elements). This means that when the user hovers their mouse over an <code><a></a></code> element, the <code>color</code> property for that element will change to red. This type of pseudo-class is a dynamic pseudo-class, because it occurs only in response to user interaction—in this case, the mouse moving over the targeted element.</p>
+<p>It’s important to recognize that these types of selectors do not just select elements; they select elements that are in a particular state. For the purposes of this example, the state is the “hover” state.</p>
+<h2>Pseudo-element</h2>
+<p>Finally, CSS has a selector referred to as a pseudo-element and, used appropriately, it can be very useful. The only caveat is that this selector is quite different from the other examples we’ve considered. Let’s see a pseudo-element in context:</p>
+<pre class="programlisting"><code>.container:before {
+&nbsp;&nbsp;&nbsp;content: "";
+&nbsp;&nbsp;&nbsp;display: block;
+&nbsp;&nbsp;&nbsp;width: 50px;
+&nbsp;&nbsp;&nbsp;height: 50px;
+&nbsp;&nbsp;&nbsp;background-color: #141414;
+}</code></pre>
+<p>This example uses one kind of pseudo-element, the <code>:before</code> pseudo-element. As the name suggests, this selector inserts an imaginary element into the page, inside the targeted element, before its contents.</p>
+
+      </section>
