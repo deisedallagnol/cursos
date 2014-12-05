@@ -1,2 +1,3 @@
 document.querySelector("#telefone");
-document.getElementById("telefine");
+document.getElementById("telefone");
+document.getElementsByClassName("telefone");
