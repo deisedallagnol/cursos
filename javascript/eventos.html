@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+Mouse Over Me</div>
+
+<div onclick="mOver(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+Mouse Click Me</div>
+
+<div id="texto">Clique aqui</div>
+
+
+<script>
+function mOver(obj) {
+    obj.innerHTML = "Thank You"
+}
+
+function mOut(obj) {
+    obj.innerHTML = "Mouse Over Me"
+}
+
+var objFrase = document.getElementById("texto");
+objFrase.addEventListener("click", displayDate);
+
+function displayDate() {
+    document.getElementById("texto").innerHTML = 'Olá Mundo!';
+}
+</script>
+
+</body>
+</html> 
