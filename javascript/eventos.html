@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="bye();">
 
 <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
 style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
@@ -10,11 +10,24 @@ Mouse Over Me</div>
 Mouse Click Me</div>
 
 <div id="texto">Clique aqui</div>
+<span id="total">0</span>
 
 
 <script>
+function bye(){
+	alert('Tchau!');
+}
+window.onbeforeunload = Sair;
+function Sair()
+{
+    alert("A página foi fechada");
+}
 function mOver(obj) {
     obj.innerHTML = "Thank You"
+    var total = document.getElementById('total').innerHTML;
+    total++;
+    document.getElementById('total').innerHTML = total;
+
 }
 
 function mOut(obj) {
