@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Lojinha da Deise</title>	
+	<style>
+		#sacolinha{
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+Sacola de compras: <span id="sacolinha">0</span>
+<div id="lista_produtos">
+</div>
+<ul id="lista">
+</ul>
+<div>Total:<span id="total">0.00</span></div>
+<button onclick="finalizarCompra();">Finalizar Compra</button>
+<br>
+
+<img src="corretivo.jpg" title="Corretivo" width="150">
+<span>Corretivo - R$ 189,00</span>
+<button onclick="comprar('Corretivo');">Comprar</button>
+
+<img src="paleta.jpg" title="Paleta" width="150">
+<span>Paleta - R$ 45,00</span>
+<button onclick="comprar('Paleta', 45.78);">Comprar</button>
+
+<img src="pinceis.jpg" title="Paleta" width="150">
+<span>Pincéis - R$ 29,00</span>
+<button onclick="comprar('Pincéis', 29.00);">Comprar</button>
+
+
+<br><br><br><br>
+	<h3>Receba nossas novidades. Cadastre-se</h3>
+	<form onsubmit="return validaForm();">
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome"/>
+		<label for="email">E-mail:</label>
+		<input type="text" id="email" name="email"/>
+		<input type="submit" value="Enviar">
+	</form>
+<script>
+	function validaForm(){
+		var nome = document.getElementById('nome');
+		var email = document.getElementById('email');
+		if(nome.value == ''){
+			alert('Por favor, digite o seu nome.');
+			nome.style.borderColor = 'red';
+			nome.focus();			
+			return false;
+		}
+
+		if(email.value == ''){
+			alert('Por favor, digite o seu nome.');
+			email.style.borderColor = 'red';
+			email.focus();			
+			return false;
+		}
+
+		nome.style.border = '';
+		email.style.border = '';
+	}
+	
+	function comprar(produto, preco){
+		var sacola = document.getElementById('sacolinha');
+		var qnt = sacola.innerHTML;
+		qnt++;
+		sacola.innerHTML = qnt;		
+		
+		//document.getElementById('lista_produtos').innerHTML += produto+"<br>";
+      
+	      var novoProduto = document.createElement('li');
+
+	      var strTexto = document.createTextNode(produto);
+
+	      novoProduto.appendChild(strTexto);
+
+	       novoProduto.onclick = function() { 
+		       	this.parentNode.removeChild(this); 
+		       	var qnt = sacola.innerHTML;
+				qnt--;
+				sacola.innerHTML = qnt;	
+	       }
+
+	      document.getElementById('lista').appendChild(novoProduto);
+
+				
+		var valorAntigo = textoDinheiro(document.getElementById('total').innerHTML);
+		
+		document.getElementById('total').innerHTML = valorAntigo+preco;
+	}
+
+	function finalizarCompra(){
+		window.location.href="final.html";
+	}
+
+	function textoDinheiro(valor){
+		return parseFloat(valor);
+	}
+
+</script>
+</body>
+</html>
