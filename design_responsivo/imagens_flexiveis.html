@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Imagens flexíveis</title>
+	<style>
+		img {
+			max-width: 100%;
+		}
+
+		p{
+			text-align: left;
+		}
+
+		.noticia{
+			width: 300px;
+			float: left;
+			border: 1px solid black;	
+			text-align: center;		
+		}
+	</style>
+</head>
+<body>
+	<div class="noticia">
+		<img src="foto.png">
+		<p>Uma observação importante é que, caso seja preciso se preocupar com o IE8 na implementação de imagens responsivas, é preciso colocar width:auto em imagens dentro de elementos com float sem declaração explícita de largura</p>
+	</div>
+</body>
+</html>
