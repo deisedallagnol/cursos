@@ -1,0 +1,59 @@
+<h1>Modernizr</h1>
+<h3>Alguns browsers não aceitam as novas features de CSS3 e HTML5. Saiba como detectá-los e tratá-los com a biblioteca Modernizr.</h3>
+
+Modernizr makes it easy for you to write conditional JavaScript and CSS to handle each situation, whether a browser supports a feature or not. It’s perfect for doing progressive enhancement easily.
+
+Modernizr (download) é uma pequena biblioteca JavaScript (7kb na versão comprimida) criada por Faruk Ateş e Paul Irish que tem por finalidade detectar o suporte do navegador para algumas das novas funcionalidades da HTML5 e das CSS3. 
+
+
+<h2>Como funciona?</h2>
+
+A biblioteca usa o moderno conceito de detecção de funcionalidade para determinar o suporte pelo navegador em lugar de fazer a detecção do navegador com uso da não confiável e ultrapassada propriedade navigator.userAgent.
+
+A biblioteca cria um objeto global JavaScript denominado Modernizr contendo propriedades para cada uma das novas funcionalidades da HTML 5 e CSS 3 - aquelas citadas anteriomente no título Introdução. Se o navegador suporta uma funcionalidade a propriedade retorna TRUE, se não o retorno é FALSE.
+
+Por exemplo:
+<pre>
+if (Modernizr.multiplebgs) {
+  // script para navegadores que suportam múltiplos backgrounds 
+} else {
+  // script para navegadores que não suportam múltiplos backgrounds 
+}
+</pre>
+
+OU
+
+<pre>
+Modernizr.load({
+  test: Modernizr.geolocation,
+  yep : 'geo.js',
+  nope: 'geo-polyfill.js'
+});
+</pre>
+
+Ao ser carregada a biblioteca em um documento web ela atribui, automaticamente, ao elemento raiz do documento, o html, um conjunto de classes pré-definidas indicando o suporte ou não de cada uma das propriedades testadas. A classe atribuida fornece um seletor para estilização. Vejamos um exemplo para esclarecer: suponha que o navegador X suporta canvas, audio e border-radius e não suporta box-shadow, múltiplos backgrounds e rgba().
+
+Qualquer página aberta no navegador X à qual esteja vinculada a biblioteca terá seu elemento raiz populado com o atributo class conforme mostrado a seguir:
+
+<pre>
+	<html class="canvas audio borderradius no-boxshadow no-multiplebgs no-rgba">
+</pre>
+
+e no css
+
+<pre>
+#meu-div { /* para navegadores que não suportam box-shadow */	
+	border: none;
+	box-shadow: #666 1px 1px 1px;
+	-moz-box-shadow: #666 1px 1px 1px;
+	-webkit-box-shadow: #666 1px 1px 1px;	
+}
+.no-boxshadow #meu-div { /* para navegadores que suportam box-shadow */
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #777;
+}
+</pre>
+
+Teste: http://www.maujor.com/tutorial/modernizr/suite-testes-modernizr.html
+
+Documentação oficial: http://modernizr.com/docs/
