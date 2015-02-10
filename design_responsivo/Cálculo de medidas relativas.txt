@@ -1,0 +1,25 @@
+Cálculo de fontes relativas
+
+O em é uma maneira mais rápida de usar a porcentagem, e seu uso surgiu da época das gráficas de jornais impressos, que definiram o valor 1em como sendo o tamanho da letra "M", em maiúscula.
+
+O grande segredo é que 1em equivale a 100%, ou seja, ao tamanho padrão de fonte.
+Então, 2em vale o dobro do tamanho, ou 200%.
+Também podemos usar valores decimais, como 0.5em que vale 50%.
+
+
+Objeto / Contexto
+
+ou Contexto * objeto
+
+body{
+font-size 20px; do pai
+}
+
+h1{
+font-size 1.5em; filho
+}
+
+O tamanho da fonte no h1 será de 30px, pois ele está aumentando 1 vez e meia o tamanho da letra do elemento pai que aqui no nosso exemplo é a tag body.
+
+O contexto geramente costuma ser 16px.
+

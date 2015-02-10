@@ -7,3 +7,15 @@ http://blog.popupdesign.com.br/design-responsivo-grids-e-texto/
 http://externo.reweb.com.br/affero/
 
 http://externo.reweb.com.br/frontend_deise/garra_site/mobile/
+
+http://blog.popupdesign.com.br/design-responsivo-grids-e-texto/
+
+http://html5please.com/#prefixes
+
+http://tableless.com.br/manipulando-metatag-viewport/
+
+http://tableless.com.br/as-muitas-faces-do-mobile-first/
+
+http://sergiolopes.org/diretorio-design-responsivo/
+
+http://blog.caelum.com.br/pixels-pixels-ou-pixels-dicas-de-web-mobile-com-viewport/

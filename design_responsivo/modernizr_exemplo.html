@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Nova Estrutura Global HTML5</title>
+	<link rel="icon" href="img/favicon.png">
+	<link rel='stylesheet' href='arquivo.css'>
+	<style>
+		.teste1{
+			border: 3px solid pink;
+			border-radius: 20px;
+			width: 300px;
+			height: 150px;
+		}
+
+		.teste2{
+			border: 3px solid green;
+		}
+
+		/*ou ainda*/
+		/*.no-borderradius .teste1{
+			border: 3px solid green;
+		}*/
+
+		
+	</style>
+	<!-- Coloque o modernizr depois de todos os CSS -->
+	<script src='http://modernizr.com/downloads/modernizr.js'></script>	
+</head>
+<body>
+	<div id="teste" class="teste1">
+	</div>
+	<script>
+	if (Modernizr.borderradius) {
+  			// script para navegadores que suportam múltiplos backgrounds 
+		} else {
+		  // script para navegadores que não suportam múltiplos backgrounds 
+		  document.getElementById('teste').className += ' teste2';
+		}
+	</script>
+</body>
+</html>
+
+
