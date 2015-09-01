@@ -1,0 +1,23 @@
+Existe diversas maneiras de alinahr um elemento verticalmente
+
+1 - usando line-height
+
+.box{
+  line-height: 20px;
+}
+
+2 - Usando o vertical-align
+
+Esta maneira é a mais chatinha de fazer funcionar pois existem alguns pontos que devem ser observados:
+
+ele pode ter float, e pode ser position absolute se quiser.
+.box-pai{
+  display: table;
+}
+
+ele não pode ter float, mas o elemento ao lado dele pode ter se quiser. mas esse elemento
+não estará alinhado verticalmente
+.box-filho{
+  display: table-cell;
+  vertical-align: middle;
+}
