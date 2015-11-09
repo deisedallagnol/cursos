@@ -21,3 +21,14 @@ não estará alinhado verticalmente
   display: table-cell;
   vertical-align: middle;
 }
+
+3 - usando transform
+
+Nunca esquecer que o elemento pai deve ser position:relative
+
+.elemento{
+  position: absolute;
+  transform: translate(-50%,0);
+  left: 50%;
+}
+
