@@ -1,6 +1,6 @@
 Trabalhando com menus personalizados
 
-para ativar a área de menu no tema coloque isto no functions.php
+para ativar a área de menu peronalizado no tema coloque isto no functions.php
 
 if ( function_exists( 'register_nav_menu' ) ) {
   register_nav_menu( 'meu_menu', 'Este é meu primeiro menu');
@@ -8,7 +8,7 @@ if ( function_exists( 'register_nav_menu' ) ) {
 }
 
 
-coloque esse código onde você quer que o menu apareça no seu tema
+coloque esse código onde você quer que o menu personalizado apareça no seu tema
 
 wp_nav_menu( array(
   ‘menu’ => ‘meu_menu’,
@@ -45,3 +45,8 @@ depth: Quantos níveis de hierarquia devem ser incluídos
 walker: Objeto para personalização do menu
 
 
+Métodos do wordpress
+the_author() imprime o nome do autor
+the_time('d. M .Y') imprime a data do post ex: 25.NOV.2015
+the_title() imprime o titulo do post
+the_content() imprime o conteúdo do post
