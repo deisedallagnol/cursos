@@ -32,3 +32,4 @@ Nunca esquecer que o elemento pai deve ser position:relative
   left: 50%;
 }
 
+<?php comments_popup_link('Sem Comentários', '1 Comentário', '% Comentários', 'comments-link', ''); ?> <?php edit_post_link('(Editar)'); ?>
