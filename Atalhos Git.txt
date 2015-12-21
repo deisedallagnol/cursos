@@ -1,0 +1,1 @@
+git add -A adiciona todos os arquivos pendentens no repositório
