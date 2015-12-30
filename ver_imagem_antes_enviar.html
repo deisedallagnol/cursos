@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>TecnoWarez</title>
+        <script>
+            !window.jQuery && document.write('<script src="http://tecnowarez.com/site/scripts/js/jquery-1.4.3.min.js"><\/script>');
+        </script>
+        <script>
+            function preview(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+ 
+                    reader.onload = function (e) {
+                            $('#preview_image')
+                .attr('src', e.target.result)
+                                    .width(350)
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+ 
+        </script>
+    </head>
+ 
+    <form>
+        <img id="preview_image" alt="" src="" width="374px">
+        <p><span>Foto:</span><input type="file" name="files" id="files" onchange="preview(this);" multiple></p>
+    </form>
+</html>
