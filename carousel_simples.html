@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+	#carousel {
+		width: 200px;
+		overflow: hidden;
+	}
+
+	#carousel ul {
+		width: 1920px;
+		padding: 0;
+		margin: 0;
+	}
+	#carousel ul li {
+		width: 200px;
+		text-align: center;
+		height:	20px;
+		list-style:	none;
+		float: left;
+	}
+	</style>
+</head>
+<body>
+	<div id="carousel">
+	    <ul>
+	        <li>1</li>
+	        <li>2</li>
+	        <li>3</li>
+	        <li>4</li>
+	        <li>5</li>
+	    </ul>
+	</div>
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		// Set the interval to be 5 seconds
+		var t = setInterval(function(){
+			//$("#frases ul").animate({marginLeft:-200},1000,function(){
+			$("#carousel ul").animate({
+				opacity: 0
+			}, 1000, function(){
+				
+				$(this).find("li:last").after($(this).find("li:first"));
+				
+				$(this).css({opacity:1});
+			})
+		}, 5000);
+
+					//   	$(document).ready(function(){
+					// // Set the interval to be 5 seconds
+					// var t = setInterval(function(){
+					// 	$("#carousel ul").animate({marginLeft:-480},1000,function(){
+					// 		// This code runs after the animation completes
+					// 		$(this).find("li:last").after($(this).find("li:first"));
+					// 		// Now we've taken out the left-most list item, reset the margin
+					// 		$(this).css({marginLeft:0});
+					// 	})
+					// },5000);
+		});
+	</script>
+</body>
+</html>
