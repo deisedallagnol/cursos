@@ -1,1 +1,4 @@
 git add -A adiciona todos os arquivos pendentens no repositório
+
+trocar o endereço do repositório
+git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
