@@ -1,0 +1,52 @@
+Trabalhando com menus personalizados
+
+para ativar a área de menu peronalizado no tema coloque isto no functions.php
+
+if ( function_exists( 'register_nav_menu' ) ) {
+  register_nav_menu( 'meu_menu', 'Este é meu primeiro menu');
+  register_nav_menu( 'segundo_menu', 'Este é meu segundo menu');
+}
+
+
+coloque esse código onde você quer que o menu personalizado apareça no seu tema
+
+wp_nav_menu( array(
+  ‘menu’ => ‘meu_menu’,
+  ‘theme_location’ => ‘meu_menu’,
+  ‘container’ => ‘div’,
+  ‘container_class’ => ‘classe_do_container’,
+  ‘container_id’ => ‘id_do_container’,
+  ‘menu_class’ => ‘classe_do_menu’,
+  ‘echo’ => true,
+  ‘menu_id’ => ‘id_do_menu’,
+  ‘before’ => ”,
+  ‘after’ => ”,
+  ‘link_before’ => ”,
+  ‘link_after’ => ”,
+  ‘depth’ => 0,
+  ‘walker’ => ”,
+) );
+
+
+
+menu: O nome do menu em que deseja retornar (valor determinado na função register_menu)
+theme_location: Onde vai está localizado o menu (valor determinado na função register_menu)
+container: Se alguma tag irá envolver a lista do menu
+container_class: Classes do container
+container_id: O ID do container
+menu_class: Classes da lista do menu
+menu_id: O ID da lista do menu
+echo: Usado para retorno do menu, em uma vez que seu valor seja falso, o menu não será retornado ou visível.
+before: Se algum elemento entrará antes do menu
+after: Se algum elemento entrará depois do menu
+link_before: Se algum elemento entrará antes do link
+link_after: Se alguém elementro entrará depois do menu
+depth: Quantos níveis de hierarquia devem ser incluídos
+walker: Objeto para personalização do menu
+
+
+Métodos do wordpress
+the_author() imprime o nome do autor
+the_time('d. M .Y') imprime a data do post ex: 25.NOV.2015
+the_title() imprime o titulo do post
+the_content() imprime o conteúdo do post
