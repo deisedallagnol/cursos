@@ -1,6 +1,6 @@
 cursos
 ======
-Arquivos para cursos ministrados por mim
+Arquivos para cursos ministrados por mim.
 
 Inclui os cursos:
 
@@ -11,3 +11,11 @@ Inclui os cursos:
 - Javascript;
 
 - jQuery;
+
+- Design Responsivo;
+
+- Acessibilidade Web;
+
+- Scrum;
+
+- Wordpress (Temas e Plugins).
